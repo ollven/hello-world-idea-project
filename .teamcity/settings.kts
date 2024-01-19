@@ -86,6 +86,9 @@ object Build : BuildType({
             goals = "clean test"
             pomLocation = ".teamcity/pom.xml"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
+            coverageEngine = idea {
+                includeClasses = "de.ollven.*"
+            }
         }
     }
 
