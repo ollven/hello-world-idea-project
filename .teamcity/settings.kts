@@ -68,6 +68,7 @@ object Build : BuildType({
     steps {
         ideaRunner {
             id = "JPS"
+            enabled = false
             pathToProject = ".idea"
             jdk {
                 name = "17"
