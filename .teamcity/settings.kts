@@ -67,7 +67,7 @@ object Build : BuildType({
     steps {
         ideaRunner {
             id = "JPS"
-            pathToProject = ""
+            pathToProject = ".idea"
             jdk {
                 name = "17"
                 path = "%env.JDK_17_0%"
@@ -75,6 +75,9 @@ object Build : BuildType({
                 extAnnotationPatterns("%teamcity.tool.idea%/lib/jdkAnnotations.jar")
             }
             jvmArgs = "-Xmx256m"
+            coverageEngine = idea {
+                includeClasses = "HelloWorldIdea.iml"
+            }
         }
     }
 
