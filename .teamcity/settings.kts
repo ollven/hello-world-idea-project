@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
+import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.ideaRunner
 import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
@@ -78,6 +79,12 @@ object Build : BuildType({
             coverageEngine = idea {
                 includeClasses = "HelloWorldIdea.iml"
             }
+        }
+        maven {
+            id = "Maven2"
+            goals = "clean test"
+            pomLocation = ".teamcity/pom.xml"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
     }
 
