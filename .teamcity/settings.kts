@@ -36,7 +36,7 @@ project {
     features {
         awsConnection {
             id = "AmazonWebServicesAws"
-            name = "Amazon Web Services (AWS)"
+            name = "Amazon Web Services (AWS) edit"
             regionName = "eu-west-1"
             credentialsType = static {
                 accessKeyId = "AKIA5JH2VERVJFGDHSDZ"
