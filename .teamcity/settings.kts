@@ -2,7 +2,6 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.ideaRunner
-import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -35,17 +34,6 @@ project {
     buildType(Build)
 
     features {
-        awsConnection {
-            id = "AmazonWebServicesAws"
-            name = "Amazon Web Services (AWS) edit 111"
-            regionName = "eu-west-1"
-            credentialsType = static {
-                accessKeyId = "AKIA5JH2VERVJFGDHSDZ"
-                secretAccessKey = "credentialsJSON:c7bed6d8-8e41-449d-ae0d-6cdf2a5c4296"
-                stsEndpoint = "https://sts.eu-west-1.amazonaws.com"
-            }
-            param("id", "AmazonWebServicesAws")
-        }
         s3Storage {
             id = "PROJECT_EXT_3"
             awsEnvironment = default {
