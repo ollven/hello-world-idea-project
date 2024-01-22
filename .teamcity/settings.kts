@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.ideaRunner
+import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -31,6 +32,18 @@ version = "2023.11"
 project {
 
     buildType(Build)
+
+    features {
+        awsConnection {
+            id = "AmazonWebServicesAws"
+            name = "Amazon Web Services (AWS)"
+            credentialsType = static {
+                accessKeyId = "AKIA5JH2VERVJFGDHSDZ"
+                secretAccessKey = "credentialsJSON:c7bed6d8-8e41-449d-ae0d-6cdf2a5c4296"
+            }
+            allowInBuilds = false
+        }
+    }
 }
 
 object Build : BuildType({
