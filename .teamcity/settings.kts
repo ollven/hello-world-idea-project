@@ -3,7 +3,6 @@ import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.ideaRunner
 import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
-import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -45,15 +44,6 @@ project {
                 stsEndpoint = "https://sts.eu-west-1.amazonaws.com"
             }
             param("id", "AmazonWebServicesAws")
-        }
-        s3Storage {
-            id = "PROJECT_EXT_6"
-            awsEnvironment = default {
-            }
-            connectionId = "AmazonWebServicesAws"
-            storageName = "New Storage"
-            bucketName = "ollven.test.2"
-            forceVirtualHostAddressing = true
         }
     }
 }
