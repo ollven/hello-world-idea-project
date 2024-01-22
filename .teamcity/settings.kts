@@ -49,7 +49,6 @@ project {
         s3Storage {
             id = "PROJECT_EXT_6"
             awsEnvironment = default {
-                awsRegionName = "eu-west-1"
             }
             connectionId = "AmazonWebServicesAws"
             storageName = "New Storage"
