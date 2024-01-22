@@ -3,6 +3,7 @@ import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.ideaRunner
 import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
+import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -42,6 +43,16 @@ project {
                 secretAccessKey = "credentialsJSON:c7bed6d8-8e41-449d-ae0d-6cdf2a5c4296"
             }
             allowInBuilds = false
+        }
+        s3Storage {
+            id = "PROJECT_EXT_5"
+            awsEnvironment = default {
+                awsRegionName = "eu-west-1"
+            }
+            connectionId = "AmazonWebServicesAws"
+            storageName = "New Storage"
+            bucketName = "ollven.test.2"
+            forceVirtualHostAddressing = true
         }
     }
 }
