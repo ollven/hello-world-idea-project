@@ -2,7 +2,6 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.ideaRunner
-import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -32,18 +31,6 @@ version = "2023.11"
 project {
 
     buildType(Build)
-
-    features {
-        s3Storage {
-            id = "PROJECT_EXT_3"
-            awsEnvironment = default {
-            }
-            connectionId = "AmazonWebServicesAws"
-            storageName = "New Storage"
-            bucketName = "ollven.test.2"
-            forceVirtualHostAddressing = true
-        }
-    }
 }
 
 object Build : BuildType({
