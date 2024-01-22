@@ -37,14 +37,14 @@ project {
     features {
         awsConnection {
             id = "AmazonWebServicesAws"
-            name = "Amazon Web Services (AWS) edit"
+            name = "Amazon Web Services (AWS) edit 111"
             regionName = "eu-west-1"
             credentialsType = static {
                 accessKeyId = "AKIA5JH2VERVJFGDHSDZ"
                 secretAccessKey = "credentialsJSON:c7bed6d8-8e41-449d-ae0d-6cdf2a5c4296"
                 stsEndpoint = "https://sts.eu-west-1.amazonaws.com"
             }
-            allowInBuilds = false
+            param("id", "AmazonWebServicesAws")
         }
         s3Storage {
             id = "PROJECT_EXT_3"
