@@ -49,11 +49,11 @@ project {
         s3Storage {
             id = "PROJECT_EXT_8"
             awsEnvironment = default {
-                awsRegionName = "eu-west-1"
             }
             connectionId = "AmazonWebServicesAws"
             storageName = "new"
             bucketName = "ollven.test"
+            forceVirtualHostAddressing = true
         }
     }
 }
